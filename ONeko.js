@@ -101,7 +101,7 @@
         idleAnimation = null;
         idleAnimationFrame = 0;
         const direction = (diffY / distance > 0.5 ? "N" : "") + (diffY / distance < -0.5 ? "S" : "") +
-                          (diffX / distance > 0.5 ? "W" : "") + (diffX / distance < -0.5 ? "E" : "");
+            (diffX / distance > 0.5 ? "W" : "") + (diffX / distance < -0.5 ? "E" : "");
         setSprite(direction, frameCount);
 
         nekoPosX -= (diffX / distance) * nekoSpeed;
@@ -115,4 +115,4 @@
     }
 
     create();
-  })();
+})();
