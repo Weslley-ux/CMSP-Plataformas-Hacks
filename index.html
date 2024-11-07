@@ -102,7 +102,7 @@
         }
 
         .button {
-            background-color: #4169e1;
+            background-color: #7851A9;
             color: white;
             padding: 15px 20px;
             margin: 5px;
@@ -119,7 +119,7 @@
         }
 
         .button:hover {
-            background-color: #3658b5;
+            background-color: #6c3baa;
             transform: scale(1.05);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             transition: all 0.4s ease-in-out;
@@ -222,8 +222,6 @@
             margin-right: 8px;
         }
 
-
-
         #statusPopup h2 {
             margin: 0;
             color: #e0e0e0;
@@ -243,6 +241,18 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
             opacity: 0;
+        }
+
+        #profileButton,
+        #discordButton {
+            background-color: #4169E1;
+            /* Azul Royal */
+        }
+
+        #profileButton:hover,
+        #discordButton:hover {
+            background-color: #3658b5;
+            /* Um tom mais escuro de azul para o efeito hover */
         }
     </style>
 </head>
@@ -280,6 +290,12 @@
                 </div>
             </div>
             <hr />
+            <button id="profileButton" class="button" aria-label="Profile">
+                <i class="fas fa-user" aria-hidden="true"></i> Profile
+            </button>
+            <button id="discordButton" class="button" aria-label="Discord">
+                <i class="fa-brands fa-discord" aria-hidden="true"></i> Discord
+            </button>
             <div class="view-count">
                 <i class="fas fa-eye"></i>
                 Views: <span id="viewCount">0</span>
@@ -288,7 +304,6 @@
     </div>
 
     <script>
-
         $(document).ready(function () {
             $.ajax({
                 method: "GET",
@@ -358,32 +373,60 @@
             window.open("https://doritus.mmrcoss.tech/coisas", "_blank");
         });
 
+        document.getElementById("profileButton").addEventListener("click", () => {
+            window.open("https://darkmod3.github.io/", "_blank");
+        });
+
+        document.getElementById("discordButton").addEventListener("click", () => {
+            window.open("https://discord.gg/platformdestroyer", "_blank");
+        });
+
         document
             .getElementById("khanButton")
             .addEventListener("click", async () => {
-                await copyToClipboard("https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/Khan");
-                window.open("https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialBK.md", "_blank");
+                await copyToClipboard(
+                    "https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/Khan"
+                );
+                window.open(
+                    "https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialBK.md",
+                    "_blank"
+                );
             });
 
         document
             .getElementById("speakButton")
             .addEventListener("click", async () => {
-                await copyToClipboard("https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/SPeak");
-                window.open("https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialBK.md", "_blank");
+                await copyToClipboard(
+                    "https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/SPeak"
+                );
+                window.open(
+                    "https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialBK.md",
+                    "_blank"
+                );
             });
 
         document
             .getElementById("aluraButton")
             .addEventListener("click", async () => {
-                await copyToClipboard("https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/Alura");
-                window.open("https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialVM.md", "_blank");
+                await copyToClipboard(
+                    "https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/Alura"
+                );
+                window.open(
+                    "https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialVM.md",
+                    "_blank"
+                );
             });
 
         document
             .getElementById("mesalvaButton")
             .addEventListener("click", async () => {
-                await copyToClipboard("https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/MeSalva");
-                window.open("https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialVM.md", "_blank");
+                await copyToClipboard(
+                    "https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/MeSalva"
+                );
+                window.open(
+                    "https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialVM.md",
+                    "_blank"
+                );
             });
     </script>
 
