@@ -293,6 +293,9 @@
             <button id="profileButton" class="button" aria-label="Profile">
                 <i class="fas fa-user" aria-hidden="true"></i> Profile
             </button>
+            <button id="destroyerButton" class="button" aria-label="DestroyerHUB">
+                <i class="fa-solid fa-list" aria-hidden="true"></i> DestroyerHUB
+            </button>
             <button id="discordButton" class="button" aria-label="Discord">
                 <i class="fa-brands fa-discord" aria-hidden="true"></i> Discord
             </button>
@@ -390,6 +393,14 @@
                 window.open(
                     "https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialBK.md",
                     "_blank"
+                );
+            });
+
+        document
+            .getElementById("destroyerButton")
+            .addEventListener("click", async () => {
+                await copyToClipboard(
+                    "https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/DestroyerHUB"
                 );
             });
 
