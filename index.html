@@ -58,9 +58,9 @@
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s, box-shadow 0.3s;
-            margin-bottom: 80px;
             width: 100%;
             min-height: 150px;
+            margin-bottom: 120px;
         }
 
         h1 {
@@ -153,6 +153,7 @@
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
+                margin-bottom: 140px;
             }
 
             .button {
@@ -166,8 +167,10 @@
             padding: 20px;
             text-align: center;
             width: 100%;
-            position: absolute;
+            position: fixed;
             bottom: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         footer .credits {
@@ -219,37 +222,7 @@
             margin-right: 8px;
         }
 
-        #statusButton {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #4169e1;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
 
-        #statusButton:hover {
-            background-color: #3658b5;
-        }
-
-        #statusPopup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #1e1e1e;
-            border: 2px solid #808080;
-            border-radius: 10px;
-            padding: 20px;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
 
         #statusPopup h2 {
             margin: 0;
@@ -270,42 +243,6 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
             opacity: 0;
-        }
-
-        #statusPopup.show {
-            display: block;
-            opacity: 1;
-        }
-
-        .status-list {
-            margin-top: 10px;
-            text-align: left;
-        }
-
-        #closePopup {
-            background-color: #ff6f61;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
-
-        #closePopup:hover {
-            background-color: #e0554a;
-        }
-
-        #overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 999;
         }
     </style>
 </head>
@@ -350,43 +287,7 @@
         </div>
     </div>
 
-    <button id="statusButton">Status</button>
-    <div id="overlay"></div>
-    <div id="statusPopup">
-        <h2>Status Scripts</h2>
-        <p>🟢 = Online<br />🔴 = Offline</p>
-        <div class="status-list">
-            <p>
-                <i class="fas fa-circle" style="color: red"></i> CMSP<br /><i class="fas fa-circle"
-                    style="color: green"></i>
-                Khan<br /><i class="fas fa-circle" style="color: green"></i>
-                SPeak<br /><i class="fas fa-circle" style="color: green"></i>
-                Alura<br /><i class="fas fa-circle" style="color: green"></i> MeSalva
-            </p>
-        </div>
-        <button id="closePopup">Fechar</button>
-    </div>
-
     <script>
-        const statusButton = document.getElementById("statusButton");
-        const statusPopup = document.getElementById("statusPopup");
-        const overlay = document.getElementById("overlay");
-        const closePopup = document.getElementById("closePopup");
-
-        statusButton.addEventListener("click", () => {
-            statusPopup.classList.add("show");
-            overlay.style.display = "block";
-        });
-
-        closePopup.addEventListener("click", () => {
-            statusPopup.classList.remove("show");
-            overlay.style.display = "none";
-        });
-
-        overlay.addEventListener("click", () => {
-            statusPopup.classList.remove("show");
-            overlay.style.display = "none";
-        });
 
         $(document).ready(function () {
             $.ajax({
@@ -497,11 +398,13 @@
                 <p class="footer-text">Nix</p>
             </div>
             <div>
-                <img src="https://i.imgur.com/kpatQA8.png" alt="ChatGPT" title="Me ajudou com o CMSP Plataformas Hacks" />
+                <img src="https://i.imgur.com/kpatQA8.png" alt="ChatGPT"
+                    title="Me ajudou com o CMSP Plataformas Hacks" />
                 <p class="footer-text">ChatGPT</p>
             </div>
             <div>
-                <img src="https://i.imgur.com/4zXrfHx.png" alt="marcos10pc" title="Desenvolvedor dos scripts (CMSP, Alura e MeSalva)" />
+                <img src="https://i.imgur.com/4zXrfHx.png" alt="marcos10pc"
+                    title="Desenvolvedor dos scripts (CMSP, Alura e MeSalva)" />
                 <p class="footer-text">marcos10pc</p>
             </div>
             <div>
