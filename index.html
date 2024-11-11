@@ -33,6 +33,36 @@
             scrollbar-width: thin;
         }
 
+        .donation-button {
+            background-color: #4CAF50;
+            /* Cor verde */
+            color: white;
+            padding: 15px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            flex: 0 0 auto;
+            max-width: 150px;
+        }
+
+        .donation-button:hover {
+            background-color: #45a049;
+            /* Cor verde mais escura */
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease-in-out;
+        }
+
+        .donation-button i {
+            margin-right: 8px;
+        }
+
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -299,6 +329,14 @@
             <button id="discordButton" class="button" aria-label="Discord">
                 <i class="fa-brands fa-discord" aria-hidden="true"></i> Discord
             </button>
+            <div class="button-row">
+                <div class="button-row">
+                    <a href="https://pixgg.com/DarkMode" class="donation-button" target="_blank"
+                        aria-label="Doação via Pix">
+                        <i class="fas fa-donate" aria-hidden="true"></i> Doação
+                    </a>
+                </div>
+            </div>
             <div class="view-count">
                 <i class="fas fa-eye"></i>
                 Views: <span id="viewCount">0</span>
