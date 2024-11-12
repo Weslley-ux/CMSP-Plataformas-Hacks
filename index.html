@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Plataforma de hacks atualizados diariamente para facilitar as tarefas nas plataformas do CMSP" />
-    <meta name="keywords"
-        content="hacks CMSP, hacks plataformas CMSP, hacks Khan Academy, hacks Alura, hacks MeSalva, Novo Ensino Médio, ferramentas CMSP, educação CMSP" />
+    <meta name="description" content="Plataforma de hacks atualizados diariamente para facilitar as tarefas nas plataformas do CMSP" />
+    <meta name="keywords" content="hacks CMSP, hacks plataformas CMSP, hacks Khan Academy, hacks Alura, hacks MeSalva, Novo Ensino Médio, ferramentas CMSP, educação CMSP" />
     <title>CMSP Plataformas Hacks</title>
     <link rel="icon" href="https://i.imgur.com/YJk8r8E.png" />
+
+
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="ONeko.js" defer></script>
+    <script src="https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/Addons/DiscordLogs.js" defer></script>
+    <script src="https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/Addons/Typer.js" defer></script>
+    <script src="https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/Addons/ONeko.js" defer></script>
+    <script src="https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/Addons/Noti.js" defer></script>
+
+    <!------------------------------------------------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------------------------------------------>
+
     <style>
         body {
             font-family: "Roboto", sans-serif;
@@ -24,6 +30,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             min-height: 100vh;
             text-align: center;
@@ -31,68 +38,6 @@
             position: relative;
             overflow-x: hidden;
             scrollbar-width: thin;
-        }
-
-        .donation-notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #4CAF50; /* Verde */
-            color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            font-size: 16px;
-            font-weight: bold;
-            display: none; /* Inicialmente oculto */
-            z-index: 9999;
-            animation: slideIn 0.5s ease-out forwards;
-            cursor: pointer;
-        }
-
-        /* Animação de deslizamento da notificação */
-        @keyframes slideIn {
-            from {
-                right: -300px;
-            }
-            to {
-                right: 20px;
-            }
-        }
-
-        /* Hover efeito */
-        .donation-notification:hover {
-            background-color: #45a049; /* Cor verde mais escura */
-        }
-
-        .donation-button {
-            background-color: #4CAF50;
-            /* Cor verde */
-            color: white;
-            padding: 15px 20px;
-            margin: 5px;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-            display: inline-flex;
-            align-items: center;
-            flex: 0 0 auto;
-            max-width: 150px;
-        }
-
-        .donation-button:hover {
-            background-color: #45a049;
-            /* Cor verde mais escura */
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s ease-in-out;
-        }
-
-        .donation-button i {
-            margin-right: 8px;
         }
 
         ::-webkit-scrollbar {
@@ -138,8 +83,7 @@
             border-right: 4px solid #e0e0e0;
         }
 
-        h2,
-        h3 {
+        h2, h3 {
             color: #e0e0e0;
             margin-bottom: 15px;
         }
@@ -176,8 +120,11 @@
             transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             flex: 0 0 auto;
             max-width: 150px;
+            width: 100%;
+            height: 50px
         }
 
         .button:hover {
@@ -201,13 +148,6 @@
             }
         }
 
-        .footer-text {
-            color: #b0b0b0;
-            margin-top: 5px;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
@@ -218,44 +158,6 @@
                 padding: 12px 15px;
                 font-size: 14px;
             }
-        }
-
-        footer {
-            background-color: #1e1e1e;
-            padding: 10px;
-            text-align: center;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        footer .credits {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-
-        footer .credits div {
-            text-align: center;
-        }
-
-        footer .credits img {
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            transition: transform 0.3s ease;
-        }
-
-        footer .credits img:hover {
-            transform: scale(1.1);
-        }
-
-        footer p {
-            margin-top: 10px;
-            color: #999;
         }
 
         hr {
@@ -301,19 +203,26 @@
             opacity: 0;
         }
 
-        #profileButton,
-        #discordButton,
-        #destroyerButton {
+        #donationButton {
+            background-color: #4CAF50;
+        }
+
+        #donationButton:hover {
+            background-color: #45a049;
+        }
+
+        #profileButton, #discordButton {
             background-color: #4169E1;
         }
 
-        #profileButton:hover,
-        #discordButton:hover,
-        #destroyerButton {
+        #profileButton:hover, #discordButton:hover {
             background-color: #3658b5;
         }
     </style>
 </head>
+
+    <!------------------------------------------------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------------------------------------------>
 
 <body>
     <p></p>
@@ -328,42 +237,40 @@
             <hr />
             <div class="button-container">
                 <div class="button-row">
-                    <button id="cmspButton" class="button" aria-label="CMSP">
+                    <button id="cmspButton" class="button">
                         <i class="fas fa-school" aria-hidden="true"></i> CMSP
                     </button>
-                    <button id="khanButton" class="button" aria-label="Khan Academy">
+                    <button id="khanButton" class="button">
                         <i class="fas fa-graduation-cap" aria-hidden="true"></i> Khan
                     </button>
-                    <button id="speakButton" class="button" aria-label="SPeak">
+                    <button id="speakButton" class="button">
                         <i class="fas fa-comments" aria-hidden="true"></i> SPeak
                     </button>
                 </div>
                 <div class="button-row">
-                    <button id="aluraButton" class="button" aria-label="Alura">
+                    <button id="aluraButton" class="button">
                         <i class="fas fa-laptop-code" aria-hidden="true"></i> Alura
                     </button>
-                    <button id="mesalvaButton" class="button" aria-label="MeSalva">
+                    <button id="destroyerButton" class="button">
+                        <i class="fa-solid fa-list" aria-hidden="true"></i> Destroyer
+                    </button>
+                    <button id="mesalvaButton" class="button">
                         <i class="fas fa-receipt" aria-hidden="true"></i> MeSalva
                     </button>
                 </div>
+
+
             </div>
             <hr />
-            <button id="profileButton" class="button" aria-label="Profile">
+            <button id="profileButton" class="button">
                 <i class="fas fa-user" aria-hidden="true"></i> Profile
             </button>
-            <button id="destroyerButton" class="button" aria-label="Destroyer">
-                <i class="fa-solid fa-list" aria-hidden="true"></i> Destroyer
+            <button id="donationButton" class="button">
+                <i class="fas fa-donate" aria-hidden="true"></i> Doação
             </button>
-            <button id="discordButton" class="button" aria-label="Discord">
+            <button id="discordButton" class="button">
                 <i class="fa-brands fa-discord" aria-hidden="true"></i> Discord
             </button>
-            <div class="button-row">
-                <div class="button-row">
-                    <a href="https://pixgg.com/DarkMode" class="donation-button" target="_blank"
-                        aria-label="Doação via Pix">
-                        <i class="fas fa-donate" aria-hidden="true"></i> Doação
-                    </a>
-                </div>
             </div>
             <div class="view-count">
                 <i class="fas fa-eye"></i>
@@ -372,23 +279,17 @@
         </div>
     </div>
 
-    <div class="donation-notification" id="donationNotification">
-        Doe para apoiar o desenvolvimento do site! <i class="fas fa-heart"></i>
-    </div>
+    <!------------------------------------------------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------------------------------------------>
 
     <script>
-        // Exibir a notificação após 2 segundos
         window.onload = function () {
-            setTimeout(function () {
-                document.getElementById("donationNotification").style.display = "block";
-            }, 2000); // Exibe a notificação após 2 segundos
+            mostrarNotificacao('Doe para apoiar o desenvolvimento do site!', 'info');
         };
-
-        // Esconder a notificação quando clicada
-        document.getElementById("donationNotification").addEventListener("click", function () {
-            this.style.display = "none";
-        });
     </script>
+
+    <!------------------------------------------------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------------------------------------------>
 
     <script>
         $(document).ready(function () {
@@ -402,44 +303,16 @@
                     }
                 },
                 error: function () {
-                    $("#viewCount").text("Erro ao carregar");
+                    $("#viewCount").text("Carregando...");
                 },
             });
         });
+    </script>
 
-        const title = "CMSP Plataformas Hacks";
-        const titleElement = document
-            .getElementById("title")
-            .querySelector("span");
-        let index = 0;
-        let isDeleting = false;
+    <!------------------------------------------------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------------------------------------------>
 
-        function type() {
-            const currentText = title.slice(0, index);
-            titleElement.textContent = currentText;
-
-            if (isDeleting) {
-                index--;
-                if (index < 0) {
-                    isDeleting = false;
-                    index = 0;
-                    setTimeout(type, 800);
-                } else {
-                    setTimeout(type, 80);
-                }
-            } else {
-                index++;
-                if (index > title.length) {
-                    isDeleting = true;
-                    setTimeout(type, 5000);
-                } else {
-                    setTimeout(type, 150);
-                }
-            }
-        }
-
-        type();
-
+    <script>
         document.addEventListener("contextmenu", (e) => {
             e.preventDefault();
         });
@@ -450,14 +323,18 @@
                 if (!response.ok) throw new Error("Erro ao buscar o script");
                 const code = await response.text();
                 await navigator.clipboard.writeText(code);
-                alert("Script copiado com sucesso!");
+                mostrarNotificacao('Script copiado com sucesso!', 'sucesso');
             } catch (error) {
-                alert("Erro ao copiar o script. Tente novamente.");
+                mostrarNotificacao('Erro ao copiar o script. Tente novamente.', 'erro');
             }
         }
 
         document.getElementById("cmspButton").addEventListener("click", () => {
             window.open("https://doritus.mmrcoss.tech/coisas", "_blank");
+        });
+
+        document.getElementById("donationButton").addEventListener("click", () => {
+            window.open("https://pixgg.com/DarkMode/", "_blank");
         });
 
         document.getElementById("profileButton").addEventListener("click", () => {
@@ -468,89 +345,25 @@
             window.open("https://discord.gg/platformdestroyer", "_blank");
         });
 
-        document
-            .getElementById("khanButton")
-            .addEventListener("click", async () => {
-                await copyToClipboard(
-                    "https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/Khan"
-                );
-                window.open(
-                    "https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialBK.md",
-                    "_blank"
-                );
-            });
+        document.getElementById("khanButton").addEventListener("click", async () => {
+            await copyToClipboard("https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/Khan");
+        });
 
-        document
-            .getElementById("destroyerButton")
-            .addEventListener("click", async () => {
-                await copyToClipboard(
-                    "https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/DestroyerHUB"
-                );
-            });
+        document.getElementById("destroyerButton").addEventListener("click", async () => {
+            await copyToClipboard("https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/DestroyerHUB");
+        });
 
-        document
-            .getElementById("speakButton")
-            .addEventListener("click", async () => {
-                await copyToClipboard(
-                    "https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/SPeak"
-                );
-                window.open(
-                    "https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialBK.md",
-                    "_blank"
-                );
-            });
+        document.getElementById("speakButton").addEventListener("click", async () => {
+            await copyToClipboard("https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/SPeak");
+        });
 
-        document
-            .getElementById("aluraButton")
-            .addEventListener("click", async () => {
-                await copyToClipboard(
-                    "https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/Alura"
-                );
-                window.open(
-                    "https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialVM.md",
-                    "_blank"
-                );
-            });
+        document.getElementById("aluraButton").addEventListener("click", async () => {
+            await copyToClipboard("https://github.com/Louyslnx/Aluraxploit");
+        });
 
-        document
-            .getElementById("mesalvaButton")
-            .addEventListener("click", async () => {
-                await copyToClipboard(
-                    "https://raw.githubusercontent.com/DarkMod3/DarkCloud/refs/heads/Main/CMSP-Plataformas-Hacks/MeSalva"
-                );
-                window.open(
-                    "https://github.com/DarkMod3/CMSP-Plataformas-Hacks/blob/Main/TutorialVM.md",
-                    "_blank"
-                );
-            });
+        document.getElementById("mesalvaButton").addEventListener("click", async () => {
+            await copyToClipboard("https://github.com/Louyslnx/tosalvo2/");
+        });
     </script>
-
-    <footer>
-        <div class="credits">
-            <div>
-                <img src="https://i.imgur.com/qvC9Nrx.png" alt="DarkMode" title="Criador do CMSP Plataformas Hacks" />
-                <p class="footer-text">DarkMode</p>
-            </div>
-            <div>
-                <img src="https://i.imgur.com/Gaynayc.png" alt="Nix" title="Desenvolvedor do Khanware" />
-                <p class="footer-text">Nix</p>
-            </div>
-            <div>
-                <img src="https://i.imgur.com/kpatQA8.png" alt="ChatGPT"
-                    title="Me ajudou com o CMSP Plataformas Hacks" />
-                <p class="footer-text">ChatGPT</p>
-            </div>
-            <div>
-                <img src="https://i.imgur.com/4zXrfHx.png" alt="marcos10pc"
-                    title="Desenvolvedor dos scripts (CMSP, Alura e MeSalva)" />
-                <p class="footer-text">marcos10pc</p>
-            </div>
-            <div>
-                <img src="https://i.imgur.com/qdQ5RRL.jpeg" alt="Hyxam" title="Desenvolvedor do script para SPeak" />
-                <p class="footer-text">Hyxam</p>
-            </div>
-        </div>
-    </footer>
 </body>
-
 </html>
